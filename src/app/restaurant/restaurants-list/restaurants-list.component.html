@@ -1,0 +1,26 @@
+<div class="container">
+    <p *ngIf="restaurants.length< 1">No restaurant available.</p>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>restaurant_name</th>
+              <th>Status</th>
+              <th>opening_time</th>
+              <th>closing_time</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let restaurant of restaurants">
+              <td>{{restaurant.restaurant_name}}</td>
+              <td>{{restaurant.status}}</td>
+              <td>{{restaurant.opening_time}}</td>
+              <td>{{restaurant.closing_time}}</td>
+              <td><span class="glyphicon glyphicon-pencil"></span></td>
+              <td (click)="deleteRestaurant(restaurant._id)"> <span class="glyphicon glyphicon-trash"></span></td>
+            </tr>
+          </tbody>
+        </table>  
+  
+  </div>

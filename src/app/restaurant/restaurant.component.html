@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form  [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="restaurant_name">Restaurant Name</label>
+          <input type="text" for="restaurant_name" class="form-control" formControlName="restaurant_name">
+          <span *ngIf="!restaurantForm.get('restaurant_name').valid && restaurantForm.get('restaurant_name').touched" class="help-block">please enter restaurant name</span>
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select type="text" for="status" class="form-control" formControlName="status">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+                <option value="Delete">Delete</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="photo">Restaurant Image:</label>
+            <input type="file" id="photo" name="photo" class="form-control" formControlName="photo" accept="image/png, image/jpeg">
+        </div>
+        <div class="form-group">
+            <label for="opening_time">Opening Time  : </label>
+            <input type="time" id="opening_time" name="opening_time" formControlName="opening_time" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="closing_time">Closing Time  : </label>
+            <input type="time" id="closing_time" name="closing_time" formControlName="closing_time" class="form-control">
+        </div>
+        <button class="btn btn-primary" type="submit" >Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- 
+<app-restaurants-list></app-restaurants-list>
+ -->
